@@ -10,13 +10,13 @@ function bidali()
 
     //   balidazioak egin
     var danaondo=true;
-    if (isNaN(zenbaki)==true)
+    if (isNaN(zenbaki)==true) // NaN == NotaNumber
     {
         alert("Zenbakiak soilik sartu. ERROR");
         danaondo=false;
     }
-    var plantilla="^[a-zA-Z]+$"; // plantilla soilik letrak
-    if(hitza.match(plantilla)==null)
+    var patroia="^[a-zA-Z\s]+$"; // txantiloia soilik letrak
+    if(hitza.match(patroia)==null)
     {
         alert("Letrak soilik sartu. ERROR");
         danaondo=false;
@@ -28,6 +28,11 @@ function bidali()
             'zenbaki': zenbaki,
             'hitza': hitza
         }
+        // edo beste era honetara:
+        //var datuakObj = new Object();
+        //datuakObj.zenbaki = zenbaki;
+        //datuakObj.hitza = hitza;
+
         //  enpaketatutako datuak bidali
         $.ajax({
             url: "./php/datuakGorde.php",

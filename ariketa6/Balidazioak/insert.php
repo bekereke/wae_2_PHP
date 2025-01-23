@@ -1,12 +1,12 @@
 <?php
-$param=json_decode($_POST['param']); 
+$param=json_decode($_POST['param']);
 
 $danaondo=true;
 
 //---  email  ---------------------
 $param->email = filter_var($param->email, FILTER_SANITIZE_EMAIL);
 if (filter_var($param->email, FILTER_VALIDATE_EMAIL) == false) {
-    $danaondo=false;  
+    $danaondo=false;
 };
 //---    username -----------------
 $pattern="/^[0-9a-zA-Z]+$/";
@@ -35,13 +35,13 @@ if ($danaondo==true)
 
     if (!($conn->connect_error)) {
 
-        $query ="INSERT INTO messages (email, username, number, message) VALUES (?,?,?,?)";
+        $query ="INSERT INTO data (Email, Username, Number, Message) VALUES (?,?,?,?)";
         $stmt = $conn->prepare($query);  // create a query statement 'controller' (variable name $stmt)
         $stmt->bind_param('ssis', $param->email,$param->username,$param->number,$param->message);  // 'i': integer
         $result=$stmt->execute();
         $stmt->close();  // close prepared statement
         $conn->close(); // close connection
-    
+
         $returnValue=['status'=>"Datuak ongi sartu dira"];
     }else{
         $returnValue=['status'=>"Konexio errorea"];
@@ -49,5 +49,5 @@ if ($danaondo==true)
 }else{
     $returnValue=['status'=>"Datuak gaizki daude"];
 }
-header('Content-Type: application/json');  
-echo json_encode($returnValue); 
+header('Content-Type: application/json');
+echo json_encode($returnValue);

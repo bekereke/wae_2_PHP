@@ -1,0 +1,79 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor del formulario */
+.insert {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título */
+.insert h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Estilos para los labels */
+.insert label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555555;
+}
+
+/* Estilos para los inputs */
+.insert input[type="email"],
+.insert input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.insert input[type="email"]::placeholder,
+.insert input[type="text"]::placeholder {
+  color: #999;
+  font-style: arial;
+}
+
+.insert input[type="email"]:focus,
+.insert input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+/* Estilos para el botón */
+.insert button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.insert button:hover {
+  background-color: #0056b3;
+}

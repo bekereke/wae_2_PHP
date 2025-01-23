@@ -168,10 +168,10 @@ function validarEnviar() {
             url: "./insert.php",
             type: "POST",
             data: { param: JSON.stringify(datuak) },
-            // dataType: 'json', 
+            // dataType: 'json',
             success: function(response) {
                 alert (response.status);
-               
+
             },
             error: function(xhr) {
                 alert("An AJAX error occured: " + xhr.status + " " + xhr.statusText);
@@ -190,10 +190,10 @@ function enviarNoValidar() {
         'message':arrInputs[4].value};
 
     $.ajax({
-            url: "./validateInsert.php",
+            url: "./balidatu_gabe_insert.php",
             type: "POST",
             data: { param: JSON.stringify(datuak) },
-            // dataType: 'json', 
+            dataType: 'json',
             success: function(response) {
                 // alert (response.status);
                 console.log(response);
@@ -202,7 +202,7 @@ function enviarNoValidar() {
                 alert("An AJAX error occured: " + xhr.status + " " + xhr.statusText);
             }
     });
-    
+
 
 
 }
@@ -210,7 +210,7 @@ function enviarNoValidar() {
 
 
 function val_email(value) {
-    var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,3})+$/;
     var result;
 
     if (regex.test(value)) {
@@ -224,7 +224,7 @@ function val_email(value) {
 
 //-----------------------  true if only numbers-------------------
 function val_integer(value) {
-    //Si no existe cadena (vacía) no será válida y obviamente la existencia de una letra o carácter especial, 
+    //Si no existe cadena (vacía) no será válida y obviamente la existencia de una letra o carácter especial,
     //tampoco dará como verdadero o válido.
 
     var valoresAceptados = /^[0-9]+$/;

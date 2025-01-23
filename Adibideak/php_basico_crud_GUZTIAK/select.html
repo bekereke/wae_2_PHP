@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+<body>    
+	<div>
+        <p> Si quieres consultar los datos de un usuario en concreto, indica el id del usuario y pulsa el boton Buscar. </p>		
+        <p> <label> ID a buscar: </label> <input type="text" id="inId">
+		<!-- MEJORADO. SI AL PULSAR EL BOTON BUSCAR NO HAY NINGUN ID INFORMADO, QUE MUESTRE TODOS LOS USUARIOS-->
+        <button id="btnBuscarId">Buscar</button>
+    </div>
+	<div id="divMensaje">
+    </div>
+	<div id="divIntro">
+		<!-- LA ETIQUETA <b> SE DEBE CAMBIAR POR REGLAS CSS-->
+        <label> <b>A continuacion se muestran los participantes del juego asir2_test: </b></label>
+        
+    </div>
+	<div id="divMain">
+    </div>
+
+    <script src="./js/jsFunciones.js"></script>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+</body>
+</html>
